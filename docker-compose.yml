@@ -7,7 +7,7 @@ apache:
   ports:
     - "8080:80"
 mysql:
-  build: ./docker/mysql
+  image: mysql
   volumes:
     - "./docker/mysql:/docker-entrypoint-initdb.d"
   ports:

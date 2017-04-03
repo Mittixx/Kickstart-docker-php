@@ -14,4 +14,6 @@
     - **Utilisateur** root
     - **Mot de passe** myPassword
 6. Démarrez les serveurs avec `./dev.sh`
-6. Connectez vous au serveur PHP a l'adresse [localhost:8080](http://localhost:8080/)
+7. Connectez vous au serveur PHP a l'adresse [localhost:8080](http://localhost:8080/)
+
+
