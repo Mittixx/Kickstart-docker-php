@@ -10,7 +10,7 @@
 4. Placez vos scripts SQL dans le dossier `docker/mysql`, ils seront éxécutés au démarrage du serveur MySQL
 5. Les coordonnées du serveur MySQL sont les suivants
     - **Hote** mysql
-    - **Base de données** blog
+    - **Base de données** potions
     - **Utilisateur** root
     - **Mot de passe** myPassword
 6. Démarrez les serveurs avec `./dev.sh`
