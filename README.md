@@ -16,4 +16,8 @@
 6. Démarrez les serveurs avec `./dev.sh`
 7. Connectez vous au serveur PHP a l'adresse [localhost:8080](http://localhost:8080/)
 
+## Base de données
 
+La branche `potions` inclue une base de données complexe comprenant des potions. En voici le schéma physique.
+
+![Potions](potions.png)

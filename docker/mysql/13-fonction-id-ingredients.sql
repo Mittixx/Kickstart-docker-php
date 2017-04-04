@@ -1,0 +1,5 @@
+CREATE FUNCTION idDIngredient(Type VARCHAR(255)) RETURNS INTEGER
+  RETURN (SELECT id
+  FROM Ingredient
+  WHERE Nom LIKE CONCAT('%',Type,'%')
+  LIMIT 1);

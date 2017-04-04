@@ -1,0 +1,64 @@
+BEGIN;
+
+CREATE TABLE Competence(
+  ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  Nom VARCHAR(255)
+);
+
+CREATE TABLE TypeDeMagie(
+  ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  Nom VARCHAR(255)
+);
+
+CREATE TABLE Competence_TypeDeMagie(
+  ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  TypeDeMagie INT UNSIGNED,
+  Competence INT UNSIGNED,
+  FOREIGN KEY (Competence) REFERENCES Competence(ID),
+  FOREIGN KEY (TypeDeMagie) REFERENCES TypeDeMagie(ID)
+);
+
+CREATE TABLE Inventeur(
+  ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  Nom VARCHAR(255),
+  NumeroDePermis VARCHAR(255),
+  TypeDeMagie INT UNSIGNED,
+  FOREIGN KEY (TypeDeMagie) REFERENCES TypeDeMagie(ID)
+);
+
+CREATE TABLE Potion(
+  ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  Nom VARCHAR(255),
+  Diluant ENUM('Vin','Jus de fruit','Bière','Eau'),
+  Themperature INT,
+  Prix FLOAT,
+  Inventeur INT UNSIGNED,
+  FOREIGN KEY (Inventeur) REFERENCES Inventeur(ID)
+);
+
+CREATE TABLE Ingredient(
+  ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  Nom VARCHAR(255),
+  Poids FLOAT,
+  Prix FLOAT,
+  Type ENUM('Gemme','Matériel magique','Matériel non magique','Ingrédient secret')
+);
+
+CREATE TABLE Unite(
+  ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  Nom VARCHAR(255),
+  Equivalent FLOAT
+);
+
+CREATE TABLE Potion_Ingredient(
+  ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  Potion INT UNSIGNED,
+  Ingredient INT UNSIGNED,
+  Unite INT UNSIGNED,
+  Quantite INT,
+  Duree INT,
+  FOREIGN KEY (Potion) REFERENCES Potion(ID),
+  FOREIGN KEY (Unite) REFERENCES Unite(ID),
+  FOREIGN KEY (Ingredient) REFERENCES Ingredient(ID)
+);
+COMMIT;
