@@ -16,4 +16,7 @@
 6. Démarrez les serveurs avec `./dev.sh`
 7. Connectez vous au serveur PHP a l'adresse [localhost:8080](http://localhost:8080/)
 
+## Remise a zero
+
+Pour remettre l'ensemble du système a zero, supprimez les container stoppés avec `docker-compose rm -f` et supprimer les images construites avec `docker rmi [nom du dossier]*`
 
