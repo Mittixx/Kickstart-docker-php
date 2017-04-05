@@ -2,7 +2,7 @@
 FROM nimmis/apache-php7
 
 # Copie du fichier de configuration PHP
-COPY php.ini /etc/php/7.0/apache2
+COPY php.ini /etc/php/7.0/apache2/conf.d/custom-php.ini
 
 # Installation de 
 RUN apt-get update -y && apt-get install php-mysql -y
