@@ -1,9 +1,14 @@
 <?php
-$pdo = new PDO('mysql:dbname=blog;host=mysql','root','myPassword');
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
-$postsStatement = $pdo->query("SELECT title,content,date,users.username AS username FROM posts INNER JOIN users ON posts.userId = users.id ORDER BY posts.date DESC");
-$posts = $postsStatement->fetchAll();
+function getPosts(){
+	$pdo = new PDO('mysql:dbname=blog;host=mysql','root','myPassword');
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+	$postsStatement = $pdo->query("SELECT title,content,date,users.username AS username FROM posts INNER JOIN users ON posts.userId = users.id ORDER BY posts.date DESC");
+	return $postsStatement->fetchAll();
+}
+
+
+$posts = getPosts();
 
 ?>
 <!DOCTYPE html>
