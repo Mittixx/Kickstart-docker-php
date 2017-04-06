@@ -24,7 +24,7 @@ Pour remettre l'ensemble du système a zero, supprimez les container stoppés av
 
 1. Commencez par installer une extention permettant d'activer le debugging d'une page comme [The easiest xdebug](https://addons.mozilla.org/fr/firefox/addon/the-easiest-xdebug/) sur firefox.
 2. Lancez PHPStorm sur le projet en cours
-3. Rendez vous dans les préferances de serveur **File | Settings | Languages & Frameworks | PHP | Servers**
+3. Rendez vous dans les préferences de serveur **File | Settings | Languages & Frameworks | PHP | Servers**
 4. Ajoutez un serveur et nommez le comme vous voulez
 5. Définissez comme suit
     - **Host** localhost
